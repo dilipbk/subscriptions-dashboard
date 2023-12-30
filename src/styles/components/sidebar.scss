@@ -1,0 +1,23 @@
+.sidebar-container {
+  height: 100vh;
+  border-right: 1px solid #dddddd;
+  padding: 1rem 2rem;
+}
+
+.dashboard-title {
+  img {
+    width: 40px;
+  }
+  h5 {
+    margin: 0;
+  }
+}
+
+.navigation-container ul li {
+  display: block;
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+  }
+}

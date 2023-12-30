@@ -1,0 +1,217 @@
+// <----------- background utilities ----------->
+
+.bg-light {
+  background-color: $light;
+}
+
+.bg-dark {
+  background-color: $dark;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-danger {
+  background-color: $danger;
+}
+
+.bg-success {
+  background-color: $success;
+}
+
+// <----------- text color utilities ----------->
+
+.text-white {
+  color: $white;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-light {
+  color: $light;
+}
+
+.text-dark {
+  color: $dark;
+}
+
+.text-success {
+  color: $success;
+}
+
+.text-danger {
+  color: $danger;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+// <----------- list utilities ----------->
+
+.style-none {
+  list-style: none;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+// <----------- text decoration utilities ----------->
+.no-decoration {
+  text-decoration: none;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.deleted {
+  text-decoration: line-through;
+}
+
+// <----------- text transformation utilities ----------->
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+// <----------- font size utilities ----------->
+.text-sm {
+  font-size: 12px;
+}
+
+.text-regular {
+  font-size: 14px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.text-2xl {
+  font-size: 24px;
+}
+
+.text-3xl {
+  font-size: 28px;
+}
+
+// <----------- font weight utilities ----------->
+.font-light {
+  font-weight: 200;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 900;
+}
+
+// <----------- display utilities ----------->
+
+.block {
+  display: block;
+}
+
+.inliné {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.none {
+  display: none;
+}
+
+// <----------- flex utilities ----------->
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-2 {
+  gap: 3rem;
+}

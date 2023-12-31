@@ -1,3 +1,9 @@
+// <----------- container utilities ----------->
+
+.container {
+  padding: 1rem;
+}
+
 // <----------- background utilities ----------->
 
 .bg-light {
@@ -28,6 +34,10 @@
   background-color: $success;
 }
 
+.bg-violet {
+  background-color: $violet;
+}
+
 // <----------- text color utilities ----------->
 
 .text-white {
@@ -56,6 +66,10 @@
 
 .text-primary {
   color: $primary;
+}
+
+.text-soft {
+  color: $soft;
 }
 
 // <----------- list utilities ----------->
@@ -172,6 +186,14 @@
   display: flex;
 }
 
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -208,10 +230,22 @@
   gap: 1rem;
 }
 
+.gap-1_5 {
+  gap: 1.5rem;
+}
+
 .gap-2 {
   gap: 2rem;
 }
 
 .gap-2 {
   gap: 3rem;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.shrink {
+  flex-shrink: 1;
 }

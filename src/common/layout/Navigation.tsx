@@ -8,16 +8,21 @@ function Navigation() {
     <nav className="navigation-menu">
       <ul>
         <li>
-          <img src={dashboardIcon} alt="dashboard icon" />
-          <NavLink to="/">Dashboard</NavLink>
+          <NavLink to="/">
+            <img src={dashboardIcon} alt="dashboard icon" /> Dashboard
+          </NavLink>
         </li>
         <li>
-          <img src={usersIcon} alt="users icon" />
-          <NavLink to="users">Users</NavLink>
+          <NavLink to="users">
+            <img src={usersIcon} alt="users icon" />
+            Users
+          </NavLink>
         </li>
         <li>
-          <img src={subscriptionIcon} alt="subscription icon" />
-          <NavLink to="subscriptions">Subscriptions</NavLink>
+          <NavLink to="subscriptions">
+            <img src={subscriptionIcon} alt="subscription icon" />
+            Subscriptions
+          </NavLink>
         </li>
       </ul>
     </nav>

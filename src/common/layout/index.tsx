@@ -6,7 +6,7 @@ function Layout() {
   return (
     <div className="wrapper flex">
       <SideBar />
-      <section className="main-container">
+      <section className="main-container grow">
         <Header />
         <main className="main-content__wrapper">
           <Outlet />

@@ -1,0 +1,77 @@
+.dashboard-summary__cards {
+  margin-top: 1rem;
+}
+
+.dashboard-content {
+  margin-top: 2.2rem;
+}
+
+.users-content {
+  margin-top: 1rem;
+  border-radius: 13px;
+  padding: 0.7rem 0;
+  box-shadow: 5px 5px 15px #ebebeb;
+}
+
+.content-table {
+  height: clamp(200px, 300px, 600px);
+  overflow: auto;
+}
+
+.content-table::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.content-table::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-table::-webkit-scrollbar-thumb {
+  background-color: #e7e7e7;
+}
+
+.table-summary {
+  padding: 1rem;
+
+  .count-selector select {
+    padding: 0.3rem;
+    margin-left: 0.5rem;
+    outline: none;
+    border: 1px solid #e7e7e7;
+  }
+
+  .pagination {
+    gap: 0.5rem;
+
+    button {
+      padding: 0.3rem 0.5rem;
+      margin: 0;
+      line-height: 1;
+      border: none;
+      background: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: #e2e5f5;
+    }
+
+    button:is(:first-child, :last-child) {
+      background-color: #eeeeee;
+    }
+  }
+}
+
+@media only screen and (max-width: 1087px) {
+  .content-table {
+    width: 967px;
+  }
+}
+
+@media only screen and (max-width: 967px) {
+  .content-table {
+    width: 667px;
+  }
+}

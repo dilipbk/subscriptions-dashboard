@@ -1,0 +1,46 @@
+table {
+  display: block;
+  min-width: 967px;
+  max-width: 100%;
+  border-collapse: collapse;
+  position: relative;
+
+  thead {
+    position: sticky;
+    top: 0;
+    background: #fff;
+  }
+
+  tr {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  th,
+  td {
+    padding: 1.2rem 1rem;
+  }
+
+  th .content {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  th {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  th .sorter img {
+    width: 8px;
+  }
+
+  th .sorter span {
+    line-height: 0;
+    display: block;
+  }
+
+  td {
+    font-size: 0.9rem;
+  }
+}

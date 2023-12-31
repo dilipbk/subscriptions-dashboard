@@ -1,7 +1,12 @@
 .sidebar-container {
-  width: 300px;
-  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 287px;
   height: 100vh;
+  padding: 1.5rem;
+  z-index: 111;
   border-right: 1px solid #dddddd;
 }
 

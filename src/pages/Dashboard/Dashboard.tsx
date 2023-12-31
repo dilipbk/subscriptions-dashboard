@@ -1,14 +1,15 @@
+import { useState } from "react";
+
 import SummaryCard from "../../common/components/Cards/SummaryCard";
 import { HiUsers } from "react-icons/hi2";
 import { HiUserGroup } from "react-icons/hi2";
 import { RiPriceTag3Fill } from "react-icons/ri";
 import { RiFolderWarningFill } from "react-icons/ri";
-
 import { ResponsiveContainer } from "recharts";
 
 import Table from "../../common/components/Table/Table";
-import DataChart from "../../common/components/Chart/DataChart";
-
+import PieShape from "../../common/components/Chart/PieShape";
+import { PieChart, Pie } from "recharts";
 import {
   BarChart,
   Bar,
@@ -65,7 +66,20 @@ const data = [
   },
 ];
 
+const pieData = [
+  { name: "Group A", value: 400 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 },
+];
+
 const Dashboard = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const onPieEnter = (_, index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <main className="dashoard-home">
       <div className="container">
@@ -92,7 +106,7 @@ const Dashboard = () => {
         </div>
         <div className="dashboard-content">
           <div className="users-information">
-            <div className="users-title">
+            <div className="section-title">
               <h3 className="text-md">Users Details</h3>
             </div>
             <div className="users-content bg-white">
@@ -128,21 +142,66 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="subscriptions-summary">
-            <ResponsiveContainer width={"99%"} minHeight={300}>
-              <BarChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis fontSize={12} width={30} />
-                <Tooltip />
-                <Legend />
-                <Bar
-                  dataKey="pv"
-                  fill="#8884d8"
-                  activeBar={<Rectangle fill="pink" stroke="blue" />}
-                />
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="subscriptions-stat">
+            <div className="section-title">
+              <h3 className="text-md">Subscriptions Summary</h3>
+            </div>
+            <div className="subscriptions-stat__content flex gap-1">
+              <div className="subscribers-of-category bg-white grow">
+                <div className="chart">
+                  <ResponsiveContainer width={"100%"} minHeight={300}>
+                    <BarChart data={data}>
+                      <CartesianGrid strokeDasharray="3 3" />
+
+                      <XAxis dataKey="name" fontSize={12}></XAxis>
+                      <YAxis fontSize={12} />
+                      <Tooltip />
+                      <Legend
+                        iconType="square"
+                        align="right"
+                        verticalAlign="top"
+                        height={50}
+                      />
+                      <Bar
+                        dataKey="pv"
+                        fill="#783feb"
+                        activeBar={<Rectangle fill="#6e55a1" />}
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="label">
+                  <p className="text-sm text-center font-medium">
+                    Subscription Category
+                  </p>
+                </div>
+              </div>
+              <div className="subscription-status bg-white grow">
+                <div className="chart">
+                  <ResponsiveContainer width="100%" minHeight={300}>
+                    <PieChart width={400} height={400}>
+                      <Pie
+                        activeIndex={activeIndex}
+                        activeShape={PieShape}
+                        data={pieData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={80}
+                        fill="#8884d8"
+                        dataKey="value"
+                        onMouseEnter={onPieEnter}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="label">
+                  <p className="text-sm text-center font-medium">
+                    Subscription Status
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

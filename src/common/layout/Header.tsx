@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="dashboard-header__container grow flex items-center justify-between">
       <div className="brand">
-        <h5 className="text-xl text-soft">Users Subscription Dashboard</h5>
+        <h5 className="text-lg text-soft">Users Subscription Dashboard</h5>
       </div>
       <div className="menus flex items-center gap-1">
         <div className="notification-icon">

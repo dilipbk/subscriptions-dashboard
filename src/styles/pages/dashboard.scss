@@ -18,6 +18,23 @@
   overflow: auto;
 }
 
+.subscriptions-stat {
+  margin-top: 2.2rem;
+
+  .subscriptions-stat__content {
+    margin-top: 1rem;
+
+    > div {
+      padding: 1.5rem;
+      box-shadow: 5px 5px 15px #ebebeb;
+      border-radius: 13px;
+    }
+  }
+
+  .subscribers-of-category {
+  }
+}
+
 .content-table::-webkit-scrollbar {
   width: 5px;
   height: 5px;

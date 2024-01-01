@@ -31,13 +31,16 @@ table {
     font-weight: 500;
   }
 
-  th .sorter img {
-    width: 8px;
+  th .sorter {
+    margin-top: -7px;
   }
 
   th .sorter span {
+    color: #ccc;
     line-height: 0;
+    height: 7px;
     display: block;
+    cursor: pointer;
   }
 
   td {

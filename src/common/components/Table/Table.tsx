@@ -1,5 +1,5 @@
-import sortUp from "../../../assets/icons/sort-up.png";
-import sortDown from "../../../assets/icons/sort-down.png";
+import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Table = () => {
   return (
@@ -11,10 +11,10 @@ const Table = () => {
               S.N
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -24,10 +24,10 @@ const Table = () => {
               ID
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -37,10 +37,10 @@ const Table = () => {
               Name
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -50,10 +50,10 @@ const Table = () => {
               Status
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -63,10 +63,10 @@ const Table = () => {
               Email
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -76,10 +76,10 @@ const Table = () => {
               Street
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -89,10 +89,10 @@ const Table = () => {
               Country
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>
@@ -102,10 +102,10 @@ const Table = () => {
               Joined on
               <div className="sorter">
                 <span>
-                  <img src={sortUp} alt="up" />
+                  <IoMdArrowDropup />
                 </span>
                 <span>
-                  <img src={sortDown} alt="down" />
+                  <IoMdArrowDropdown />
                 </span>
               </div>
             </div>

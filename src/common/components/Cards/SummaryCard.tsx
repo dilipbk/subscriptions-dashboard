@@ -1,4 +1,16 @@
-function SummaryCard({ title, data, Icon, color }) {
+import React from "react";
+
+function SummaryCard({
+  title,
+  data,
+  Icon,
+  color,
+}: {
+  title: string;
+  data: string;
+  Icon: React.FC;
+  color: string;
+}) {
   return (
     <div
       className={`summary-card__container bg-${color} flex items-center grow gap-1`}

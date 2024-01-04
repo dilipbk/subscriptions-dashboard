@@ -18,7 +18,7 @@ function App() {
 
   const {
     data: users,
-    isLoading: isUSersLoading,
+    isLoading: isUsersLoading,
     isFetching: isUsersFetching,
     isError: isUsersError,
     error: userError,
@@ -28,18 +28,24 @@ function App() {
     data: subscriptions,
     isLoading: isSubscriptionsLoading,
     isFetching: isSubscriptionsFetching,
-
     isError: isSubscriptionsError,
     error: subsError,
   } = useGetSubscriptionsQuery();
 
   useEffect(() => {
-    if (isUSersLoading || isUsersFetching) dispatch(usersLoading());
+    if (isUsersLoading || isUsersFetching) dispatch(usersLoading());
     if (isUsersError) dispatch(usersError(userError));
     if (users) {
       dispatch(usersReceived(users));
     }
-  }, [dispatch, users, isUsersError]);
+  }, [
+    dispatch,
+    users,
+    isUsersError,
+    isUsersFetching,
+    isUsersLoading,
+    userError,
+  ]);
 
   useEffect(() => {
     if (isSubscriptionsLoading || isSubscriptionsFetching)
@@ -48,7 +54,14 @@ function App() {
     if (subscriptions) {
       dispatch(subscriptionsReceived(subscriptions));
     }
-  }, [dispatch, subscriptions, isSubscriptionsError]);
+  }, [
+    dispatch,
+    subscriptions,
+    isSubscriptionsError,
+    isSubscriptionsFetching,
+    isSubscriptionsLoading,
+    subsError,
+  ]);
 
   return <AppRouter />;
 }

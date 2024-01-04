@@ -6,7 +6,7 @@ import { FaRegEye } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 
-const Table = ({ data }) => {
+const Table = ({ data }: { data: object[] }) => {
   const [checkedUser, setCheckedUser] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
 

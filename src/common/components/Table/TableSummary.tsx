@@ -1,30 +1,73 @@
-const TableSummary = () => {
+import { useEffect, useState } from "react";
+
+const TableSummary = ({
+  limit,
+  page,
+  onLimitChangeHandler,
+  usersCount,
+  onPageChageHandler,
+}) => {
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    setTotalPages(usersCount / limit);
+  }, [limit]);
+
   return (
     <div className="table-summary flex justify-between items-center text-sm">
       <div className="result-count flex items-center gap-1">
         <div className="count-selector">
           <label htmlFor="count-changer">Show Results</label>
-          <select name="count-changer" id="count-changer">
+          <select
+            name="count-changer"
+            value={limit}
+            onChange={onLimitChangeHandler}
+            id="count-changer"
+          >
             <option value="10" defaultChecked>
               10
             </option>
             <option value="20">20</option>
-            <option value="10o">100</option>
+            <option value="100 ">100</option>
           </select>
         </div>
         <div className="page">
-          <p>Page: 1</p>
+          <p>
+            Page: {page} of {totalPages}
+          </p>
         </div>
-        <div className="results-of">Showing 10 / 100</div>
+        <div className="results-of">
+          Showing {page * limit} / {usersCount}
+        </div>
       </div>
       <div className="pagination flex items-center">
-        <button className="prev page">Prev</button>
-        <button className="first page">1</button>
-        <button className="second page active">2</button>
-        <button className="third page">3</button>
-        <button className="escape">...</button>
-        <button className="last page">30</button>
-        <button className="next page">Next</button>
+        <button
+          disabled={page === 1}
+          onClick={() => onPageChageHandler(-1)}
+          className="prev page"
+        >
+          Prev
+        </button>
+        {totalPages > 2 && (
+          <>
+            <button onClick={() => onPageChageHandler(1)} className="page">
+              1
+            </button>
+            <button onClick={() => onPageChageHandler(2)} className="page">
+              2
+            </button>
+            <span>...</span>
+            <button onClick={() => onPageChageHandler(totalPages)}>
+              {totalPages}
+            </button>
+          </>
+        )}
+        <button
+          disabled={page === totalPages}
+          onClick={() => onPageChageHandler("+1")}
+        >
+          Next
+        </button>
       </div>
     </div>
   );

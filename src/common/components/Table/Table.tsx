@@ -1,7 +1,7 @@
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-const Table = () => {
+const Table = ({ data }) => {
   return (
     <table>
       <thead>
@@ -45,19 +45,7 @@ const Table = () => {
               </div>
             </div>
           </th>
-          <th>
-            <div className="content">
-              Status
-              <div className="sorter">
-                <span>
-                  <IoMdArrowDropup />
-                </span>
-                <span>
-                  <IoMdArrowDropdown />
-                </span>
-              </div>
-            </div>
-          </th>
+
           <th>
             <div className="content">
               Email
@@ -73,7 +61,7 @@ const Table = () => {
           </th>
           <th>
             <div className="content">
-              Street
+              Address
               <div className="sorter">
                 <span>
                   <IoMdArrowDropup />
@@ -84,19 +72,7 @@ const Table = () => {
               </div>
             </div>
           </th>
-          <th>
-            <div className="content">
-              Country
-              <div className="sorter">
-                <span>
-                  <IoMdArrowDropup />
-                </span>
-                <span>
-                  <IoMdArrowDropdown />
-                </span>
-              </div>
-            </div>
-          </th>
+
           <th>
             <div className="content">
               Joined on
@@ -113,66 +89,16 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>#01d45d</td>
-          <td>Asmita Oli Chhetri</td>
-          <td>Active</td>
-          <td>asmitaoli20838@gmail.com.com.com</td>
-          <td>Dallas, Grand Parie</td>
-          <td>Nepal</td>
-          <td>2023-05-25</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>#01d45d</td>
-          <td>Asmita Oli Chhetri</td>
-          <td>Active</td>
-          <td>asmitaoli20838@gmail.com.com.com</td>
-          <td>Dallas, Grand Parie</td>
-          <td>Nepal</td>
-          <td>2023-05-25</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>#01d45d</td>
-          <td>Asmita Oli Chhetri</td>
-          <td>Active</td>
-          <td>asmitaoli20838@gmail.com.com.com</td>
-          <td>Dallas, Grand Parie</td>
-          <td>Nepal</td>
-          <td>2023-05-25</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>#01d45d</td>
-          <td>Asmita Oli Chhetri</td>
-          <td>Active</td>
-          <td>asmitaoli20838@gmail.com.com.com</td>
-          <td>Dallas, Grand Parie</td>
-          <td>Nepal</td>
-          <td>2023-05-25</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>#01d45d</td>
-          <td>Asmita Oli Chhetri</td>
-          <td>Active</td>
-          <td>asmitaoli20838@gmail.com.com.com</td>
-          <td>Dallas, Grand Parie</td>
-          <td>Nepal</td>
-          <td>2023-05-25</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>#01d45d</td>
-          <td>Asmita Oli Chhetri</td>
-          <td>Active</td>
-          <td>asmitaoli20838@gmail.com.com.com</td>
-          <td>Dallas, Grand Parie</td>
-          <td>Nepal</td>
-          <td>2023-05-25</td>
-        </tr>
+        {data?.map((user, index) => (
+          <tr key={user.id}>
+            <td>{user.id - 4563}</td>
+            <td>{user.id}</td>
+            <td>{`${user.first_name} ${user.middle_name} ${user.last_name}`}</td>
+            <td>{user.email}</td>
+            <td>{user.address}</td>
+            <td>{new Date(+user.join_date).toLocaleDateString()}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

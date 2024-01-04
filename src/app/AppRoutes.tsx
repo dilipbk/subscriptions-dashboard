@@ -3,6 +3,7 @@ import Layout from "../common/layout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import UserDetail from "../pages/UserDetail/UserDetail";
+import Subscriptions from "../pages/Subscriptions/Subscriptions";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "subscriptions",
-        element: <h1>This is subscriptions</h1>,
+        element: <Subscriptions />,
       },
     ],
   },

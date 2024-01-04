@@ -21,8 +21,9 @@ const Users = () => {
   const usersError = useSelector((state) => state.users.error);
   const usersLoading = useSelector((state) => state.users.status);
 
+  const { selectPaginatedUsers } = useDataSelector();
+
   useEffect(() => {
-    const { selectPaginatedUsers } = useDataSelector(users);
     setVisibleUsers(() =>
       selectPaginatedUsers(limit, page).filter((user) =>
         Object.values(user).toString().includes(search)

@@ -20,7 +20,6 @@ function App() {
     data: users,
     isLoading: isUSersLoading,
     isFetching: isUsersFetching,
-
     isError: isUsersError,
     error: userError,
   } = useGetUsersQuery();

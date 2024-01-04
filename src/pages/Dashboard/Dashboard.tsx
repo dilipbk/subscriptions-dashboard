@@ -23,13 +23,11 @@ import {
 } from "recharts";
 import TableSummary from "../../common/components/Table/TableSummary";
 
-import { useGetUsersQuery, useGetSubscriptionsQuery } from "../../api/apiSlice";
 import { useDataCount } from "../../common/hooks/useDataCount";
 import useDataSelector from "../../common/hooks/useDataSelector";
 import Loading from "../../common/components/Placeholder/Loading";
 import Error from "../../common/components/Placeholder/Error";
-import { usersReceived } from "../../features/slices/userSlice";
-import { subscriptionsReceived } from "../../features/slices/subscriptionSlice";
+import { SUBSCRIPTION_TYPE, USER_TYPE } from "../../config/types";
 
 const Dashboard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,8 +47,9 @@ const Dashboard = () => {
   const { plansCount, subscribersCount, expiredCount } =
     useDataCount(subscriptions);
 
+  const { selectPaginatedUsers, selectSubscriptionPlans } = useDataSelector();
+
   useEffect(() => {
-    const { selectPaginatedUsers } = useDataSelector(users);
     setVisibleUsers(() => selectPaginatedUsers(limit, page));
   }, [users, limit, page]);
 
@@ -59,14 +58,15 @@ const Dashboard = () => {
   }, [users, subscriptions]);
 
   useEffect(() => {
-    const { selectSubscriptionPlans } = useDataSelector(subscriptions);
     if (subscriptions) setSubscriptionPlans(() => selectSubscriptionPlans());
 
     if (subscriptions && expiredCount)
-      setSubscriptionStatusData(() => [
-        { name: "Valid", count: subscriptions.length - expiredCount },
-        { name: "Invalid", count: expiredCount },
-      ]);
+      setSubscriptionStatusData(
+        (): Array => [
+          { name: "Valid", count: subscriptions.length - expiredCount },
+          { name: "Invalid", count: expiredCount },
+        ]
+      );
   }, [subscriptions, expiredCount]);
 
   const onPieEnter = (_, index: number) => {

@@ -1,0 +1,47 @@
+.personal-info,
+.subscribed-packages,
+.subscription-packages {
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 7px;
+  box-shadow: 0 3px 10px #0001;
+}
+
+.title {
+  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.detailed-info > div {
+  flex-basis: 30%;
+}
+
+.detail-box {
+  font-size: 0.9rem;
+}
+
+.label {
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+.loading {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+.package-box {
+  margin-bottom: 1rem;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  * {
+    margin: 0;
+  }
+}

@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Layout from "../common/layout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
+import UserDetail from "../pages/UserDetail/UserDetail";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <Users />,
+      },
+      {
+        path: "users/:userId",
+        element: <UserDetail />,
       },
       {
         path: "subscriptions",

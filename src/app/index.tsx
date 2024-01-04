@@ -20,7 +20,7 @@ function App() {
     data: users,
     isLoading: isUSersLoading,
     isFetching: isUsersFetching,
-    isSuccess: isUsersSuccess,
+
     isError: isUsersError,
     error: userError,
   } = useGetUsersQuery();
@@ -29,7 +29,7 @@ function App() {
     data: subscriptions,
     isLoading: isSubscriptionsLoading,
     isFetching: isSubscriptionsFetching,
-    isSuccess: isSubscriptionsSuccess,
+
     isError: isSubscriptionsError,
     error: subsError,
   } = useGetSubscriptionsQuery();
@@ -40,7 +40,7 @@ function App() {
     if (users) {
       dispatch(usersReceived(users));
     }
-  }, [dispatch, users]);
+  }, [dispatch, users, isUsersError]);
 
   useEffect(() => {
     if (isSubscriptionsLoading || isSubscriptionsFetching)
@@ -49,7 +49,7 @@ function App() {
     if (subscriptions) {
       dispatch(subscriptionsReceived(subscriptions));
     }
-  }, [dispatch, subscriptions]);
+  }, [dispatch, subscriptions, isSubscriptionsError]);
 
   return <AppRouter />;
 }

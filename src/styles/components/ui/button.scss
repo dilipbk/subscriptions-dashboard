@@ -3,11 +3,19 @@
 }
 
 .btn-sm {
+  padding: 0.4rem 0.5rem;
+}
+
+.btn-md {
   padding: 0.5rem 1.5rem;
 }
 
 .btn-primary {
   background: $primary;
+}
+
+.btn-primary-light {
+  background-color: lighten($primary, 5);
 }
 
 .btn-danger {
@@ -16,4 +24,8 @@
 
 .btn-success {
   background: $success;
+}
+
+.btn-success-light {
+  background: lighten($success, 5);
 }
